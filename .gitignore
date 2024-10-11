@@ -27,8 +27,8 @@
 .vs/
 
 #OUR
-*manifest.json
-*packages-lock.json
+\manifest.json
+\packages-lock.json
 
 # Gradle cache directory
 .gradle/
