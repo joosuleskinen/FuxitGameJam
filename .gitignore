@@ -26,6 +26,10 @@
 # Visual Studio cache directory
 .vs/
 
+#OUR
+*manifest.json
+*packages-lock.json
+
 # Gradle cache directory
 .gradle/
 
