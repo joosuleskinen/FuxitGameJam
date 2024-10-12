@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float xVasenRange = -10; //MUUTETAAN KUN TIEDETAAN
     public float xOikeaRange = 10; //MUUTETAAN KUN TIEDETAAN
+    [SerializeField] Light2D flashLight;
+    private bool lightRotatedLeft = false;
+    private bool lightRotatedRight = true;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -50,6 +54,19 @@ public class PlayerController : MonoBehaviour
 
         // K‰‰nn‰ animaation vasemmalle tai oikealle
         spriteRenderer.flipX = playerRb.velocity.x < 0f;
+        if (playerRb.velocity.x < 0f && !lightRotatedLeft)
+        {
+            flashLight.GetComponent<Light2D>().transform.Rotate(0, 0, 180);
+            lightRotatedLeft = true;
+            lightRotatedRight = false;
+        }
+
+        if (playerRb.velocity.x > 0f && !lightRotatedRight)
+        {
+            flashLight.GetComponent<Light2D>().transform.Rotate(0, 0, -180);
+            lightRotatedRight = true;
+            lightRotatedLeft = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
