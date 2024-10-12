@@ -15,7 +15,6 @@ public class EnemyMovement : MonoBehaviour
     {
         SpeedModifier = MinDistance / 10;
         DistanceToPlayer = Vector2.Distance(Player.transform.position, transform.position);
-        Debug.Log(DistanceToPlayer);
 
         if (DistanceToPlayer < MinDistance)
         {
