@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-   
-    public GameObject prefab;
+    public GameObject monster;
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Instantiate(prefab);
+        monster.SetActive(true);
     }
 }

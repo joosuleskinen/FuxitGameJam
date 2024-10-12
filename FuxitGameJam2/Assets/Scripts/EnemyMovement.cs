@@ -8,29 +8,25 @@ public class EnemyMovement : MonoBehaviour
     public float MinDistance = 10.0f;
     private float SpeedModifier;
     private float DistanceToPlayer;
-    public Rigidbody2D Player;
-
+    public GameObject Player;
+    
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         SpeedModifier = MinDistance / 10;
         DistanceToPlayer = Vector2.Distance(Player.transform.position, transform.position);
         Debug.Log(DistanceToPlayer);
 
-
         if (DistanceToPlayer < MinDistance)
         {
-            transform.Translate(Vector2.right * Time.deltaTime * Speed*SpeedModifier);
+            transform.Translate(Vector2.right * Time.deltaTime * Speed * SpeedModifier);
         }
         else
         {
             transform.Translate(Vector2.right * Time.deltaTime * Speed * (DistanceToPlayer / 10));
         }
     }
+
+    // Update is called once per frame
+  
 }
