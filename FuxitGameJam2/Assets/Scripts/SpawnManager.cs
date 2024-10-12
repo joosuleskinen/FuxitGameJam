@@ -73,6 +73,8 @@ public class SpawnManager : MonoBehaviour
 
         if (apua == false)
         {
+            spawnPos = new Vector2(player.transform.position.x + 140, -0.05f);
+            Instantiate(background[9], spawnPos, background[9].transform.rotation);
             spawnPos = new Vector2(player.transform.position.x + 125, -0.05f);
             Instantiate(background[8], spawnPos, background[8].transform.rotation);
             spawnPos = new Vector2(player.transform.position.x + 125, -0.05f);
