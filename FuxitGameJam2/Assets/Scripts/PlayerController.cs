@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,11 +14,16 @@ public class PlayerController : MonoBehaviour
     public float xVasenRange = -10; //MUUTETAAN KUN TIEDETAAN
     public float xOikeaRange = 10; //MUUTETAAN KUN TIEDETAAN
 
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         Physics.gravity *= gravityModifier;
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -31,21 +37,21 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
         }
 
-        //Sivu
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector2.right * Time.deltaTime * horizontalInput * speed);
-
-        //Keep the player in bounds
-        if (transform.position.x < xVasenRange)
-        {
-            transform.position = new Vector2(xVasenRange, transform.position.y);
-        }
-        if (transform.position.x >xOikeaRange)
-        {
-            transform.position = new Vector2(xOikeaRange, transform.position.y);
-        }
-
     }
+
+    private void FixedUpdate()
+    {
+        // Liikkuminen
+        horizontalInput = Input.GetAxis("Horizontal");
+        playerRb.velocity = new Vector2(horizontalInput * speed, playerRb.velocity.y);
+
+        // k‰vely animaatio
+        animator.SetFloat("xVelocity", Math.Abs(playerRb.velocity.x));
+
+        // K‰‰nn‰ animaation vasemmalle tai oikealle
+        spriteRenderer.flipX = playerRb.velocity.x < 0f;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isOnGround = true;
