@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float Speed = 7.0f;
-    public float MinDistance = 10.0f;
+    private float Speed = 7.0f;
+    private float MinDistance = 3.0f;
     private float SpeedModifier;
     private float DistanceToPlayer;
     public GameObject Player;
     
     // Start is called before the first frame update
-    void Update()
+    void FixedUpdate()
     {
         SpeedModifier = MinDistance / 10;
         DistanceToPlayer = Vector2.Distance(Player.transform.position, transform.position);
