@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class Light : MonoBehaviour
+public class PlayerLight : MonoBehaviour
 {
     public Light2D playerLight;
     [SerializeField] GameObject player;
