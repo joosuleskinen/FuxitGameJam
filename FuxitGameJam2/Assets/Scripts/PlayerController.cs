@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     public float speed;
     public float xVasenRange = -10; //MUUTETAAN KUN TIEDETAAN
-    public float xOikeaRange = 10; //MUUTETAAN KUN TIEDETAAN
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector2(xVasenRange, transform.position.y);
         }
-        if (transform.position.x >xOikeaRange)
-        {
-            transform.position = new Vector2(xOikeaRange, transform.position.y);
-        }
+       
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
