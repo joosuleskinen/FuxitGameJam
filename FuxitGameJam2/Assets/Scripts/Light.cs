@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class PlayerLight : MonoBehaviour
+public class Light : MonoBehaviour
 {
     [SerializeField] Light2D bodyLight;
     [SerializeField] Light2D flashLight;
