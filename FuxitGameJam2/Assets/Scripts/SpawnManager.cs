@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -12,9 +13,10 @@ public class SpawnManager : MonoBehaviour
     private Vector2 spawnEsteet;
     private float toimi = -7;
     private int tausta = 0;
-    private float muutos = 300; //Muutetaan kun tiedetaan
-    private float voitto = 10000; //Muutetaan kun tiedetaan
+    private float muutos = 143; //Muutetaan kun tiedetaan taii 858
+    private float voitto = 715; //Muutetaan kun tiedetaan
     private float loppu = 10015; //Muutetaan kun tiedetaan
+    private bool apua = true;
 
     //Esteet
     public GameObject[] esteet;
@@ -31,7 +33,7 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
 
-        if (toimi < voitto)
+        if (toimi < voitto && apua ==true)
         {
             if (transform.position.x > toimi)
             {
@@ -59,17 +61,30 @@ public class SpawnManager : MonoBehaviour
             if (toimi > muutos)
             {
                 tausta++;
-                muutos = muutos * 2;
+                muutos = muutos +143;
+            }
+            if (toimi > voitto)
+            {
+                apua =false;
             }
         }
 
         //Viimene tausta
-        if (toimi > voitto)
-        {
-            spawnPos = new Vector2(player.transform.position.x + 54, -0.05f);
-            Instantiate(background[tausta], spawnPos, background[tausta].transform.rotation);
 
+        if (apua == false)
+        {
+            spawnPos = new Vector2(player.transform.position.x + 125, -0.05f);
+            Instantiate(background[8], spawnPos, background[8].transform.rotation);
+            spawnPos = new Vector2(player.transform.position.x + 125, -0.05f);
+            Instantiate(background[7], spawnPos, background[7].transform.rotation);
+            spawnPos = new Vector2(player.transform.position.x + 85, -0.05f);
+            Instantiate(background[5], spawnPos, background[5].transform.rotation);
+            spawnPos = new Vector2(player.transform.position.x + 95, -0.05f);
+            Instantiate(background[6], spawnPos, background[6].transform.rotation);
+            
+            apua= true;
         }
+
 
 
 
