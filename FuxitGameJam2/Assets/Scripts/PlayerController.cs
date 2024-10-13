@@ -105,6 +105,6 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isOnGround = true;
-        cooldown = 0.15f;
+        cooldown = 0.05f;
     }
 }
