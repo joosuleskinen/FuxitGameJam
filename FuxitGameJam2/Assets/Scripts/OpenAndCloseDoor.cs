@@ -30,6 +30,7 @@ public class OpenAndCloseDoor : MonoBehaviour
             door = GetComponent<Animator>();
             door.Play("Door_Close", 0, 0.0f);
             GetComponent<BoxCollider2D>().isTrigger = false;
+            GetComponent<AudioSource>().Play();
         }
     }
 }
