@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9154831304343742146}
   - component: {fileID: 1291456769509015626}
   m_Layer: 0
-  m_Name: bg_indoors_phase_end
+  m_Name: bg_indoors_phase_end_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
