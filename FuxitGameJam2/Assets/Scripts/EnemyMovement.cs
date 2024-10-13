@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 
 public class EnemyMovement : MonoBehaviour
@@ -11,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private float SpeedModifier;
     private float DistanceToPlayer;
     public GameObject Player;
-
+    
     // Start is called before the first frame update
     void FixedUpdate()
     {
@@ -29,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
                 transform.Translate(Vector2.right * Time.deltaTime * Speed * (DistanceToPlayer / 10));
             }
         }
+        
     }
 
     // Update is called once per frame
