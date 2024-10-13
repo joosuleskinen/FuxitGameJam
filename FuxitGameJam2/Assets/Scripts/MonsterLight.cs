@@ -22,7 +22,7 @@ public class MonsterLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hiddenCooldown <= 0) 
+        if (hiddenCooldown <= 0 && transform.position.x <= 790) 
         {
             eyeLight.GetComponent<Light2D>().enabled = true;
             eye2Light.GetComponent<Light2D>().enabled = true;
