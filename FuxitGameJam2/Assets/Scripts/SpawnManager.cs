@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class SpawnManager : MonoBehaviour
@@ -92,6 +93,11 @@ public class SpawnManager : MonoBehaviour
 
             
             apua= true;
+        }
+
+        if (player.transform.position.x > 825)
+        {
+            SceneManager.LoadScene(3);
         }
 
     }
