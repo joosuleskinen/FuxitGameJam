@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class SpawnManager : MonoBehaviour
     private int tausta = 0;
     private float muutos = 143; //Muutetaan kun tiedetaan taii 858
     private float voitto = 715; //Muutetaan kun tiedetaan
-    private float loppu = 10015; //Muutetaan kun tiedetaan
     private bool apua = true;
 
     //Esteet
@@ -58,6 +58,12 @@ public class SpawnManager : MonoBehaviour
 
             }
 
+            //Ei tomi, pitäis rikkoo turhat pois
+            if (gameObject.transform.position.x < player.transform.position.x - 120)
+            {
+                Destroy(gameObject);
+            }
+
             if (toimi > muutos)
             {
                 tausta++;
@@ -79,17 +85,14 @@ public class SpawnManager : MonoBehaviour
             Instantiate(background[8], spawnPos, background[8].transform.rotation);
             spawnPos = new Vector2(player.transform.position.x + 125, -0.05f);
             Instantiate(background[7], spawnPos, background[7].transform.rotation);
+            spawnPos = new Vector2(player.transform.position.x + 97, -0.05f);
+            Instantiate(background[6], spawnPos, background[6].transform.rotation);
             spawnPos = new Vector2(player.transform.position.x + 85, -0.05f);
             Instantiate(background[5], spawnPos, background[5].transform.rotation);
-            spawnPos = new Vector2(player.transform.position.x + 95, -0.05f);
-            Instantiate(background[6], spawnPos, background[6].transform.rotation);
+
             
             apua= true;
         }
-
-
-
-
 
     }
     
