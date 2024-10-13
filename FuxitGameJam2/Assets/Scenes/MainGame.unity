@@ -4643,7 +4643,7 @@ GameObject:
   - component: {fileID: 2143233560}
   m_Layer: 0
   m_Name: GroundCollider
-  m_TagString: Untagged
+  m_TagString: GroundCheck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

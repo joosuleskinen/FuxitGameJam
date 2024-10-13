@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject groundCollider;
     private bool lightRotatedLeft = false;
     private bool lightRotatedRight = true;
+    private float cooldown = 0;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -36,10 +39,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Hyppy
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && cooldown <= 0)
         {
             playerRb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
             isOnGround = false;
+        }
+
+        if (cooldown > 0)
+        {
+            cooldown -= Time.deltaTime;
         }
 
     }
@@ -77,10 +85,13 @@ public class PlayerController : MonoBehaviour
             lightRotatedRight = true;
             lightRotatedLeft = false;
         }
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isOnGround = true;
+        cooldown = 0.15f;
     }
 }
