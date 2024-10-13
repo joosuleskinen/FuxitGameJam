@@ -12,16 +12,21 @@ public class PlayerLight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bodyLight.GetComponent<Light2D>().enabled = false;
-        flashLight.GetComponent<Light2D>().enabled = false;
+        
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        if (player.GetComponent<Rigidbody2D>().velocity.x > 0f)
+       if (player.GetComponent<Rigidbody2D>().velocity.x > 0f && !gameObject.CompareTag("Exit_door"))
         {
             bodyLight.GetComponent<Light2D>().enabled = true;
             flashLight.GetComponent<Light2D>().enabled = true;
+        }
+
+        else if (player.GetComponent<Rigidbody2D>().velocity.x > 0f  && gameObject.CompareTag("Exit_door"))
+        {
+            bodyLight.GetComponent<Light2D>().enabled = false;
+            flashLight.GetComponent<Light2D>().enabled = false;
         }
     }
 }

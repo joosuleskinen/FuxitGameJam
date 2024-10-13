@@ -12,6 +12,7 @@ public class OpenAndCloseDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<BoxCollider2D>().isTrigger = true;
         door = GetComponent<Animator>();
         door.Play("Door_Open", 0, 0.0f);
     }
