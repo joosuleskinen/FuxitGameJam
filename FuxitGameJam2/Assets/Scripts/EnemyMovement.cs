@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (transform.position.x<790)
         {
-            SpeedModifier = MinDistance / 10;
+            SpeedModifier = MinDistance / 12;
             DistanceToPlayer = Vector2.Distance(Player.transform.position, transform.position);
 
             if (DistanceToPlayer < MinDistance)
@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else
             {
-                transform.Translate(Vector2.right * Time.deltaTime * Speed * (DistanceToPlayer / 10));
+                transform.Translate(Vector2.right * Time.deltaTime * Speed * (DistanceToPlayer / 5));
             }
         }
         
