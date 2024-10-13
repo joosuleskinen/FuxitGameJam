@@ -24,10 +24,6 @@ public class FootstepScript : MonoBehaviour
             footsteps();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StopFootsteps();
-        }
 
         if (Input.GetKeyUp("a"))
         {
