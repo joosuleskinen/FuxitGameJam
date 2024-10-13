@@ -360,7 +360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 860, y: 90}
+  m_AnchoredPosition: {x: 526, y: 82}
   m_SizeDelta: {x: 500, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &408855142
@@ -484,9 +484,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1fab5a37b2e8409449300e00b5ba72d1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 33e67179afd0b54458458334fa9b8815, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.711
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -866,15 +866,15 @@ RectTransform:
   m_GameObject: {fileID: 1289244471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2999998, y: 0.8874999, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 682404258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1820.3, y: 987.37}
+  m_AnchoredPosition: {x: -0.0070839, y: -4.772}
+  m_SizeDelta: {x: 1781.5, y: 998.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1289244473
 MonoBehaviour:
@@ -1084,7 +1084,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 860, y: -86}
+  m_AnchoredPosition: {x: 526, y: -94}
   m_SizeDelta: {x: 500, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385779067
