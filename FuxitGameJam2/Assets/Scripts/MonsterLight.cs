@@ -8,6 +8,7 @@ public class MonsterLight : MonoBehaviour
 {
     [SerializeField] Light2D eyeLight;
     [SerializeField] Light2D eye2Light;
+    [SerializeField] GameObject monster;
     private float hiddenCooldown = 0;
     private float showCooldown = 0;
 
@@ -22,7 +23,7 @@ public class MonsterLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hiddenCooldown <= 0) 
+        if (hiddenCooldown <= 0 && monster.transform.position.x <= 790) 
         {
             eyeLight.GetComponent<Light2D>().enabled = true;
             eye2Light.GetComponent<Light2D>().enabled = true;
