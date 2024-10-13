@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private bool lightRotatedLeft = false;
     private bool lightRotatedRight = true;
     private float cooldown = 0;
+    private float oldSpeed;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -87,6 +88,18 @@ public class PlayerController : MonoBehaviour
         }
 
         
+    }
+
+
+    public void SlowSpeed()
+    {
+        oldSpeed = speed;
+        speed = 2.0f;
+    }
+
+    public void NormalSpeed()
+    {
+        speed = oldSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
