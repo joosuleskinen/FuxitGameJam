@@ -2964,6 +2964,7 @@ MonoBehaviour:
   - {fileID: 4755961640014985393, guid: 6eb2be0d9c876644a9bff0744052b43a, type: 3}
   - {fileID: 5598537451162714362, guid: 9966d4e932111324aa9e168f3e8b2af1, type: 3}
   - {fileID: 3800370292569512087, guid: cf099eb402caaa34ca3c8467dd6fe460, type: 3}
+  - {fileID: 5956639352892675218, guid: a9cce1f433a4d724890a9d80df18f4dc, type: 3}
   koristeet:
   - {fileID: 7767964284859020858, guid: ee60e3723f4330a49a651ddb48d06aee, type: 3}
   - {fileID: 8202389750467693637, guid: e4cd15f3d4df3b04c94f5d94dc72b52b, type: 3}
@@ -3175,7 +3176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7963316214358689445, guid: 5bbb0e3d86a8f694ab39ba99ebeec227, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.315
+      value: 0.3299
       objectReference: {fileID: 0}
     - target: {fileID: 7963316214358689445, guid: 5bbb0e3d86a8f694ab39ba99ebeec227, type: 3}
       propertyPath: m_LocalPosition.y
