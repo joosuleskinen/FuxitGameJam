@@ -5,8 +5,8 @@ using UnityEngine.UIElements;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private float Speed = 7.0f;
-    private float MinDistance = 3.0f;
+    private float Speed = 9.0f;
+    private float MinDistance = 2.5f;
     private float SpeedModifier;
     private float DistanceToPlayer;
     public GameObject Player;
