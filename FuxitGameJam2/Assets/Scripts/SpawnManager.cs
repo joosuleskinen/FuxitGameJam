@@ -59,10 +59,10 @@ public class SpawnManager : MonoBehaviour
             }
 
             //Ei tomi, pitäis rikkoo turhat pois
-            if (gameObject.transform.position.x < player.transform.position.x - 120)
-            {
-                Destroy(gameObject);
-            }
+            //if (gameObject.transform.position.x < player.transform.position.x - 120)
+            //{
+                //Destroy(gameObject);
+            //}
 
             if (toimi > muutos)
             {
